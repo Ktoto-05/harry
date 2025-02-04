@@ -1,23 +1,21 @@
-import '../style.css'
-function CharacretCard() {
-    return ( 
-        <div class="cards">
-            <div class="card-block">
-                <div class="card-img">
-                    <img src="/img/hermione.png" alt="гермиона" />
+import '../style.css';
+
+function CharacterCard({ character }) {
+    return (
+        <div className="cards">
+            <div className="card-block">
+                <div className="cardImage">
+                    <img src={'http://localhost:3000/static/' + character.image} alt={character.name} />
                 </div>
 
-                <div class="card-text">
-                    <h3>Hermione Granger</h3>
-                    <p>Actor: Emma Watson</p>
-                    <p>Gender: female</p>
-                    <p>House: Гриффиндор</p>
-                    <p>Wand core: dragon heartstring</p>
-                    <p>Alive: yes </p>
+                <div className="card-text">
+                    <p>Name: {character.name}</p>
+                    <p>Age: {character.age}</p>
+                    <p>House: {character.school}</p>
                 </div>
             </div>
         </div>
     );
 }
 
-export default CharacretCard;
+export default CharacterCard;
